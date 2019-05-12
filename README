@@ -1,0 +1,9 @@
+1. Create a mini project which implements hierarchical mapping structure.
+
+The structure contains of following objects: Vehicle (super class) Bicycle (sub class) Car (sub class).
+
+These objects should be mapped to tables in database.
+
+2. Create an API that returns all Cars and Bicycle objects.
+
+3. Create simple UI that implements two buttons "All  Cars" and "All Bicycles". Each button should display requested objects.
