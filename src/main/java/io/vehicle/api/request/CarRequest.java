@@ -12,10 +12,9 @@ public class CarRequest extends VehicleRequest {
     private String carModel;
 
     @JsonCreator
-    public CarRequest(@JsonProperty("id") @NotNull Long id, 
-                      @JsonProperty("name")@NotEmpty String name, 
-                      @JsonProperty("carModel")@NotEmpty String carModel) {
-        super(id, name);
+    public CarRequest(@JsonProperty("name") @NotEmpty String name,
+                      @JsonProperty("carModel") @NotEmpty String carModel) {
+        super(name);
         this.carModel = carModel;
     }
 
@@ -25,5 +24,10 @@ public class CarRequest extends VehicleRequest {
 
     public void setCarModel(String carModel) {
         this.carModel = carModel;
+    }
+
+    @Override
+    public String type() {
+        return "car";
     }
 }

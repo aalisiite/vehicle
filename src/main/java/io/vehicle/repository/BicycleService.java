@@ -8,14 +8,13 @@ import org.springframework.stereotype.Component;
 import io.vehicle.VehicleService;
 
 @Component
-public class BicycleService implements VehicleService<Bicycle, BicycleRequest> {
+class BicycleService implements VehicleService<Bicycle, BicycleRequest> {
 
     private BicycleRecordRepository repository;
-    private MapBicycleRecordToBicycle recordToBicycle;
+    private MapBicycleRecordToBicycle recordToBicycle = new MapBicycleRecordToBicycle();
 
-    public BicycleService(BicycleRecordRepository repository, MapBicycleRecordToBicycle recordToBicycle) {
+    public BicycleService(BicycleRecordRepository repository) {
         this.repository = repository;
-        this.recordToBicycle = recordToBicycle;
     }
 
     @Override
@@ -26,5 +25,10 @@ public class BicycleService implements VehicleService<Bicycle, BicycleRequest> {
         );
         repository.save(bicycle);
         return recordToBicycle.apply(bicycle);
+    }
+
+    @Override
+    public String vehicleType() {
+        return "bicycle";
     }
 }

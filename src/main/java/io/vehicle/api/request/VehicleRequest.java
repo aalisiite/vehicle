@@ -2,30 +2,29 @@ package io.vehicle.api.request;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
 
-public class VehicleRequest {
-    @NotNull
-    private Long id;
+@JsonTypeInfo(
+        use = JsonTypeInfo.Id.NAME,
+        property = "type")
+@JsonSubTypes({
+        @JsonSubTypes.Type(value = CarRequest.class, name = "car"),
+        @JsonSubTypes.Type(value = BicycleRequest.class, name = "bicycle")
+})
+public abstract class VehicleRequest {
+
     @NotEmpty
     private String name;
 
     @JsonCreator
-    public VehicleRequest(@JsonProperty("id") @NotNull Long id,
-                          @JsonProperty("name") @NotEmpty String name) {
-        this.id = id;
+    VehicleRequest(@JsonProperty("name") @NotEmpty String name) {
         this.name = name;
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
+    public abstract String type();
 
     public String getName() {
         return name;

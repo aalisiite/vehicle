@@ -1,14 +1,17 @@
 package io.vehicle.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
 
 public class BicycleRequest extends VehicleRequest {
     @NotEmpty
     private String bicycleModel;
 
-    public BicycleRequest(@NotNull Long id, @NotEmpty String name, @NotEmpty String bicycleModel) {
-        super(id, name);
+    @JsonCreator
+    public BicycleRequest(@JsonProperty("name") @NotEmpty String name, @JsonProperty("bicycleModel") @NotEmpty String bicycleModel) {
+        super(name);
         this.bicycleModel = bicycleModel;
     }
 
@@ -18,5 +21,10 @@ public class BicycleRequest extends VehicleRequest {
 
     public void setBicycleModel(String bicycleModel) {
         this.bicycleModel = bicycleModel;
+    }
+
+    @Override
+    public String type() {
+        return "bicycle";
     }
 }

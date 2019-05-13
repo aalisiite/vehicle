@@ -7,5 +7,5 @@ public interface VehicleService<B extends Vehicle, R extends VehicleRequest> {
 
     B createVehicle(R request);
 
-    
+    String vehicleType();
 }

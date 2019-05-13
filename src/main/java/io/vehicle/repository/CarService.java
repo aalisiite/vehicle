@@ -8,13 +8,12 @@ import org.springframework.stereotype.Component;
 import io.vehicle.VehicleService;
 
 @Component
-public class CarService implements VehicleService<Car, CarRequest> {
+class CarService implements VehicleService<Car, CarRequest> {
     private CarRecordRepository repository;
-    private MapCarRecordToCar recordToCar;
+    private MapCarRecordToCar recordToCar = new MapCarRecordToCar();
 
-    public CarService(CarRecordRepository repository, MapCarRecordToCar recordToCar) {
+    public CarService(CarRecordRepository repository) {
         this.repository = repository;
-        this.recordToCar = recordToCar;
     }
 
     @Override
@@ -25,5 +24,10 @@ public class CarService implements VehicleService<Car, CarRequest> {
         );
         repository.save(car);
         return recordToCar.apply(car);
+    }
+
+    @Override
+    public String vehicleType() {
+        return "car";
     }
 }

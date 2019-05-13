@@ -1,6 +1,6 @@
 package io.vehicle.api;
 
-public class Vehicle {
+public abstract class Vehicle {
     private Long id;
     private String name;
 
