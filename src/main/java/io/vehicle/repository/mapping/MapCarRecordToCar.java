@@ -11,7 +11,7 @@ public class MapCarRecordToCar implements Function<CarRecord, Car> {
     public Car apply (CarRecord carRecord){
        return new Car(
                carRecord.getId(),
-               carRecord.getName(),
+               carRecord.getCompany(),
                carRecord.getCarModel()
        );
     }

@@ -11,7 +11,7 @@ public class MapBicycleRecordToBicycle implements Function<BicycleRecord, Bicycl
     public Bicycle apply(BicycleRecord bicycleRecord) {
         return new Bicycle(
                 bicycleRecord.getId(),
-                bicycleRecord.getName(),
+                bicycleRecord.getCompany(),
                 bicycleRecord.getBicycleModel()
         );
     }

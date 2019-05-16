@@ -35,7 +35,7 @@
             <column name="id" type="bigint" defaultValueSequenceNext="vehicle_seq">
                 <constraints nullable="false" primaryKey="true" primaryKeyName="pk_vehicles"/>
             </column>
-            <column name="name" type="varchar(100)">
+            <column name="company" type="varchar(100)">
                 <constraints nullable="false"/>
             </column>
         </createTable>

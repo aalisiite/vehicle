@@ -20,7 +20,7 @@ class BicycleService implements VehicleService<Bicycle, BicycleRequest> {
     @Override
     public Bicycle createVehicle(BicycleRequest request) {
         BicycleRecord bicycle = new BicycleRecord(
-                request.getName(),
+                request.getCompany(),
                 request.getBicycleModel()
         );
         repository.save(bicycle);

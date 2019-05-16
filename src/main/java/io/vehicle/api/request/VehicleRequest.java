@@ -17,20 +17,20 @@ import javax.validation.constraints.NotEmpty;
 public abstract class VehicleRequest {
 
     @NotEmpty
-    private String name;
+    private String company;
 
     @JsonCreator
-    VehicleRequest(@JsonProperty("name") @NotEmpty String name) {
-        this.name = name;
+    VehicleRequest(@JsonProperty("company") @NotEmpty String company) {
+        this.company = company;
     }
 
     public abstract String type();
 
-    public String getName() {
-        return name;
+    public String getCompany() {
+        return company;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setCompany(String company) {
+        this.company = company;
     }
 }

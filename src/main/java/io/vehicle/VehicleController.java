@@ -1,7 +1,6 @@
 package io.vehicle;
 
 import io.vehicle.api.Bicycle;
-import io.vehicle.api.request.BicycleRequest;
 import io.vehicle.api.request.VehicleRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -35,5 +34,5 @@ public class VehicleController {
         service.createVehicle(request);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
-    
+
 }

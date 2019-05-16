@@ -11,7 +11,7 @@ public interface CarRecordRepository extends JpaRepository<CarRecord, String> {
 
     @Query("select car from CarRecord car "
             + "where car.id =:id "
-            + "and car.name =:name "
+            + "and car.company =:company "
             + "and car.carModel =:carModel")
-    List<CarRecord> findAllCars(@Param("id") Long id, @Param("name") String name, @Param("carModel") String carModel);
+    List<CarRecord> findAllCars(@Param("id") Long id, @Param("company") String company, @Param("carModel") String carModel);
 }

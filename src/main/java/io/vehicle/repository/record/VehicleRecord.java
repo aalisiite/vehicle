@@ -12,11 +12,11 @@ public class VehicleRecord {
     @GeneratedValue(generator = "vehicle_seq_generator", strategy = GenerationType.SEQUENCE)
     @SequenceGenerator(name = "vehicle_seq_generator", sequenceName = "vehicle_seq", allocationSize = 1)
     private Long id;
-    @Column(name = "name")
-    private String name;
+    @Column(name = "company")
+    private String company;
 
-    public VehicleRecord(String name) {
-        this.name = name;
+    public VehicleRecord(String company) {
+        this.company = company;
     }
 
     public Long getId() {
@@ -27,11 +27,11 @@ public class VehicleRecord {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getCompany() {
+        return company;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setCompany(String company) {
+        this.company = company;
     }
 }

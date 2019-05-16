@@ -2,11 +2,11 @@ package io.vehicle.api;
 
 public abstract class Vehicle {
     private Long id;
-    private String name;
+    private String company;
 
-    public Vehicle(Long id, String name) {
+    public Vehicle(Long id, String company) {
         this.id = id;
-        this.name = name;
+        this.company= company;
     }
 
     public Long getId() {
@@ -17,11 +17,11 @@ public abstract class Vehicle {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getCompany() {
+        return company;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setCompany(String company) {
+        this.company = company;
     }
 }

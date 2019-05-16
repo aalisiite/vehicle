@@ -19,7 +19,7 @@ class CarService implements VehicleService<Car, CarRequest> {
     @Override
     public Car createVehicle(CarRequest request) {
         CarRecord car = new CarRecord(
-                request.getName(),
+                request.getCompany(),
                 request.getCarModel()
         );
         repository.save(car);
