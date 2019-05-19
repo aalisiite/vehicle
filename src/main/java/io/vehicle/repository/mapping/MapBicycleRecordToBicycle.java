@@ -12,7 +12,7 @@ public class MapBicycleRecordToBicycle implements Function<BicycleRecord, Bicycl
         return new Bicycle(
                 bicycleRecord.getId(),
                 bicycleRecord.getCompany(),
-                bicycleRecord.getBicycleModel()
+                bicycleRecord.getModel()
         );
     }
 }

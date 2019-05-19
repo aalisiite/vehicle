@@ -12,7 +12,7 @@ public class MapCarRecordToCar implements Function<CarRecord, Car> {
        return new Car(
                carRecord.getId(),
                carRecord.getCompany(),
-               carRecord.getCarModel()
+               carRecord.getModel()
        );
     }
 }

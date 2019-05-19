@@ -12,6 +12,6 @@ public interface BicycleRecordRepository extends JpaRepository<BicycleRecord, Lo
     @Query("select bicycle from BicycleRecord bicycle"
             + " where bicycle.id = :id "
             + " and bicycle.company = :company "
-            + "and bicycle.bicycleModel =:bicycleModel ")
-    List<BicycleRecord> findAllBicycles(@Param("id") Long id, @Param("company") String company, @Param("bicycleModel") String bicycleModel);
+            + "and bicycle.model =:model ")
+    List<BicycleRecord> findAllBicycles(@Param("id") Long id, @Param("company") String company, @Param("model") String model);
 }

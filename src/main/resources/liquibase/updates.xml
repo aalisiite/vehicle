@@ -11,7 +11,7 @@
             <column name="id" type="bigint" defaultValueSequenceNext="cars_seq">
                 <constraints nullable="false" primaryKey="true" primaryKeyName="pk_cars"/>
             </column>
-            <column name="cars_model" type="varchar(100)">
+            <column name="model" type="varchar(100)">
                 <constraints nullable="false"/>
             </column>
         </createTable>
@@ -23,7 +23,7 @@
             <column name="id" type="bigint" defaultValueSequenceNext="bicycles_seq">
                 <constraints nullable="false" primaryKey="true" primaryKeyName="pk_bicycles"/>
             </column>
-            <column name="bicycles_model" type="varchar(100)">
+            <column name="model" type="varchar(100)">
                 <constraints nullable="false"/>
             </column>
         </createTable>

@@ -7,6 +7,9 @@ import io.vehicle.repository.record.BicycleRecord;
 import org.springframework.stereotype.Component;
 import io.vehicle.VehicleService;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Component
 class BicycleService implements VehicleService<Bicycle, BicycleRequest> {
 
@@ -21,7 +24,7 @@ class BicycleService implements VehicleService<Bicycle, BicycleRequest> {
     public Bicycle createVehicle(BicycleRequest request) {
         BicycleRecord bicycle = new BicycleRecord(
                 request.getCompany(),
-                request.getBicycleModel()
+                request.getModel()
         );
         repository.save(bicycle);
         return recordToBicycle.apply(bicycle);
@@ -29,6 +32,16 @@ class BicycleService implements VehicleService<Bicycle, BicycleRequest> {
 
     @Override
     public String vehicleType() {
-        return "bicycle";
+        return "bicycles";
+    }
+
+    @Override
+    public List<Bicycle> getVehicles() {
+        List<BicycleRecord> bicycles = repository.findAll();
+        List<Bicycle> bicycleList = new ArrayList<>();
+        for (BicycleRecord bicycleRecord : bicycles) {
+            bicycleList.add(recordToBicycle.apply(bicycleRecord));
+        }
+        return bicycleList;
     }
 }

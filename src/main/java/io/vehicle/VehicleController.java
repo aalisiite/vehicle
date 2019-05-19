@@ -1,14 +1,11 @@
 package io.vehicle;
 
-import io.vehicle.api.Bicycle;
+import io.vehicle.api.Vehicle;
 import io.vehicle.api.request.VehicleRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
@@ -24,9 +21,8 @@ public class VehicleController {
         this.services = services;
     }
 
-
     @PostMapping("/create-vehicle")
-    public ResponseEntity<Bicycle> createBicycle(@RequestBody @Valid VehicleRequest request) {
+    public ResponseEntity<?> createVehicle(@RequestBody @Valid VehicleRequest request) {
         VehicleService service = services.stream()
                 .filter(vehicleService -> vehicleService.vehicleType().equals(request.type()))
                 .findFirst()
@@ -35,4 +31,13 @@ public class VehicleController {
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
+    @GetMapping("/vehicles")
+    public ResponseEntity<List<Vehicle>> getVehicles(String types) {
+        VehicleService service = services.stream()
+                .filter(vehicleService -> vehicleService.vehicleType().equals(types))
+                .findFirst()
+                .orElseThrow();
+        service.getVehicles();
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
 }

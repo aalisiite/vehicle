@@ -4,26 +4,24 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
-
 
 public class CarRequest extends VehicleRequest {
     @NotEmpty
-    private String carModel;
+    private String model;
 
     @JsonCreator
     public CarRequest(@JsonProperty("name") @NotEmpty String name,
-                      @JsonProperty("carModel") @NotEmpty String carModel) {
+                      @JsonProperty("model") @NotEmpty String model) {
         super(name);
-        this.carModel = carModel;
+        this.model = model;
     }
 
-    public String getCarModel() {
-        return carModel;
+    public String getModel() {
+        return model;
     }
 
-    public void setCarModel(String carModel) {
-        this.carModel = carModel;
+    public void setModel(String carModel) {
+        this.model = model;
     }
 
     @Override

@@ -2,19 +2,18 @@ package io.vehicle.api;
 
 public class Car extends Vehicle {
 
-    private String carModel;
+    private String model;
 
-    public Car(Long id, String name, String carModel) {
+    public Car(Long id, String name, String model) {
         super(id, name);
-        this.carModel = carModel;
+        this.model = model;
+    }
+    
+    public String getModel() {
+        return model;
     }
 
-
-    public String getCarModel() {
-        return carModel;
-    }
-
-    public void setCarModel(String carModel) {
-        this.carModel = carModel;
+    public void setModel(String model) {
+        this.model = model;
     }
 }

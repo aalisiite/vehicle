@@ -7,20 +7,24 @@ import javax.validation.constraints.NotEmpty;
 @Table(name = "bicycles")
 public class BicycleRecord extends VehicleRecord {
 
-    @Column(name = "bicycles_model")
+    @Column(name = "model")
     @NotEmpty
-    private String bicycleModel;
+    private String model;
 
-    public BicycleRecord(String name, @NotEmpty String bicycleModel) {
+    public BicycleRecord(String name) {
         super(name);
-        this.bicycleModel = bicycleModel;
     }
 
-    public String getBicycleModel() {
-        return bicycleModel;
+    public BicycleRecord(String name, @NotEmpty String model) {
+        super(name);
+        this.model = model;
     }
 
-    public void setBicycleModel(String bicycleModel) {
-        this.bicycleModel = bicycleModel;
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
     }
 }

@@ -7,20 +7,20 @@ import javax.validation.constraints.NotEmpty;
 
 public class BicycleRequest extends VehicleRequest {
     @NotEmpty
-    private String bicycleModel;
+    private String model;
 
     @JsonCreator
-    public BicycleRequest(@JsonProperty("name") @NotEmpty String name, @JsonProperty("bicycleModel") @NotEmpty String bicycleModel) {
+    public BicycleRequest(@JsonProperty("name") @NotEmpty String name, @JsonProperty("model") @NotEmpty String model) {
         super(name);
-        this.bicycleModel = bicycleModel;
+        this.model = model;
     }
 
-    public String getBicycleModel() {
-        return bicycleModel;
+    public String getModel() {
+        return model;
     }
 
-    public void setBicycleModel(String bicycleModel) {
-        this.bicycleModel = bicycleModel;
+    public void setModel(String model) {
+        this.model = model;
     }
 
     @Override
