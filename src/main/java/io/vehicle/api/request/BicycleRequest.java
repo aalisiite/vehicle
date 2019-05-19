@@ -25,6 +25,6 @@ public class BicycleRequest extends VehicleRequest {
 
     @Override
     public String type() {
-        return "bicycle";
+        return "bicycles";
     }
 }

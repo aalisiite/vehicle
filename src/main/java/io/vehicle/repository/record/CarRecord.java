@@ -11,8 +11,7 @@ public class CarRecord extends VehicleRecord {
     @NotEmpty
     private String model;
 
-    public CarRecord(String company) {
-        super(company);
+    public CarRecord() {
     }
 
     public CarRecord(String company, @NotEmpty String model) {

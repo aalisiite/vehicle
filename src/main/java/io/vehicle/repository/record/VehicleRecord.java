@@ -3,7 +3,7 @@ package io.vehicle.repository.record;
 import javax.persistence.*;
 
 @Entity
-@Table(name="vehicles")
+@Table(name = "vehicles")
 @Inheritance(
         strategy = InheritanceType.JOINED
 )
@@ -15,7 +15,10 @@ public class VehicleRecord {
     @Column(name = "company")
     private String company;
 
-    public VehicleRecord(String company) {
+    public VehicleRecord() {
+    }
+
+    VehicleRecord(String company) {
         this.company = company;
     }
 

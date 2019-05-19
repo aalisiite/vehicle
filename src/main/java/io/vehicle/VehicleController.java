@@ -37,7 +37,6 @@ public class VehicleController {
                 .filter(vehicleService -> vehicleService.vehicleType().equals(types))
                 .findFirst()
                 .orElseThrow();
-        service.getVehicles();
-        return new ResponseEntity<>(HttpStatus.OK);
+        return new ResponseEntity<>(service.getVehicles(), HttpStatus.OK);
     }
 }

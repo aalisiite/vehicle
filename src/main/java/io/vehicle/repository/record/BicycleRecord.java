@@ -11,8 +11,7 @@ public class BicycleRecord extends VehicleRecord {
     @NotEmpty
     private String model;
 
-    public BicycleRecord(String company) {
-        super(company);
+    public BicycleRecord() {
     }
 
     public BicycleRecord(String company, @NotEmpty String model) {

@@ -4,9 +4,9 @@ public abstract class Vehicle {
     private Long id;
     private String company;
 
-    public Vehicle(Long id, String company) {
+    Vehicle(Long id, String company) {
         this.id = id;
-        this.company= company;
+        this.company = company;
     }
 
     public Long getId() {

@@ -8,11 +8,11 @@ import java.util.function.Function;
 public class MapCarRecordToCar implements Function<CarRecord, Car> {
 
     @Override
-    public Car apply (CarRecord carRecord){
-       return new Car(
-               carRecord.getId(),
-               carRecord.getCompany(),
-               carRecord.getModel()
-       );
+    public Car apply(CarRecord carRecord) {
+        return new Car(
+                carRecord.getId(),
+                carRecord.getCompany(),
+                carRecord.getModel()
+        );
     }
 }

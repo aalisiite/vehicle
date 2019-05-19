@@ -26,13 +26,13 @@ class BicycleService implements VehicleService<Bicycle, BicycleRequest> {
                 request.getCompany(),
                 request.getModel()
         );
-        repository.save(bicycle);
+        bicycle = repository.save(bicycle);
         return recordToBicycle.apply(bicycle);
     }
 
     @Override
     public String vehicleType() {
-        return "bicycle";
+        return "bicycles";
     }
 
     @Override

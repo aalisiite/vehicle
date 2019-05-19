@@ -25,13 +25,13 @@ class CarService implements VehicleService<Car, CarRequest> {
                 request.getCompany(),
                 request.getModel()
         );
-        repository.save(car);
+        car = repository.save(car);
         return recordToCar.apply(car);
     }
 
     @Override
     public String vehicleType() {
-        return "car";
+        return "cars";
     }
 
     @Override
