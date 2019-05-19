@@ -31,7 +31,7 @@ class CarService implements VehicleService<Car, CarRequest> {
 
     @Override
     public String vehicleType() {
-        return "cars";
+        return "car";
     }
 
     @Override

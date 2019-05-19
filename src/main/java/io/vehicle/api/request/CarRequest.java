@@ -10,9 +10,9 @@ public class CarRequest extends VehicleRequest {
     private String model;
 
     @JsonCreator
-    public CarRequest(@JsonProperty("name") @NotEmpty String name,
+    public CarRequest(@JsonProperty("company") @NotEmpty String company,
                       @JsonProperty("model") @NotEmpty String model) {
-        super(name);
+        super(company);
         this.model = model;
     }
 

@@ -1,7 +1,5 @@
 package io.vehicle.repository.record;
 
-import net.bytebuddy.implementation.bind.annotation.Super;
-
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 
@@ -13,12 +11,12 @@ public class CarRecord extends VehicleRecord {
     @NotEmpty
     private String model;
 
-    public CarRecord(String name) {
-        super(name);
+    public CarRecord(String company) {
+        super(company);
     }
 
-    public CarRecord(String name, @NotEmpty String model) {
-        super(name);
+    public CarRecord(String company, @NotEmpty String model) {
+        super(company);
         this.model = model;
     }
 

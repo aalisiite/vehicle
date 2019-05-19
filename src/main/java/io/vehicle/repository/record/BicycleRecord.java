@@ -11,12 +11,12 @@ public class BicycleRecord extends VehicleRecord {
     @NotEmpty
     private String model;
 
-    public BicycleRecord(String name) {
-        super(name);
+    public BicycleRecord(String company) {
+        super(company);
     }
 
-    public BicycleRecord(String name, @NotEmpty String model) {
-        super(name);
+    public BicycleRecord(String company, @NotEmpty String model) {
+        super(company);
         this.model = model;
     }
 

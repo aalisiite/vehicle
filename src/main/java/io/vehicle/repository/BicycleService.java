@@ -32,7 +32,7 @@ class BicycleService implements VehicleService<Bicycle, BicycleRequest> {
 
     @Override
     public String vehicleType() {
-        return "bicycles";
+        return "bicycle";
     }
 
     @Override

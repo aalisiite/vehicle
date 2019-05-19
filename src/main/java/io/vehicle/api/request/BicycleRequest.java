@@ -10,8 +10,8 @@ public class BicycleRequest extends VehicleRequest {
     private String model;
 
     @JsonCreator
-    public BicycleRequest(@JsonProperty("name") @NotEmpty String name, @JsonProperty("model") @NotEmpty String model) {
-        super(name);
+    public BicycleRequest(@JsonProperty("company") @NotEmpty String company, @JsonProperty("model") @NotEmpty String model) {
+        super(company);
         this.model = model;
     }
 
