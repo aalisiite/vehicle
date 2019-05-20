@@ -20,6 +20,10 @@ dependencies {
     implementation 'org.liquibase:liquibase-core:3.6.3'
     runtimeOnly 'org.postgresql:postgresql'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.4.0'
+    testImplementation 'org.junit.platform:junit-platform-commons:1.4.0'
+    testImplementation 'org.testcontainers:postgresql:1.10.6'
+    testImplementation 'org.testcontainers:junit-jupiter:1.10.6'
 }
 checkstyle {
     toolVersion = "8.20"

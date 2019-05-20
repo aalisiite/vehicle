@@ -1,5 +1,7 @@
 package io.vehicle.api;
 
+import java.util.Objects;
+
 public abstract class Vehicle {
     private Long id;
     private String company;
@@ -23,5 +25,19 @@ public abstract class Vehicle {
 
     public void setCompany(String company) {
         this.company = company;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Vehicle vehicle = (Vehicle) o;
+        return id.equals(vehicle.id) &&
+                company.equals(vehicle.company);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, company);
     }
 }
