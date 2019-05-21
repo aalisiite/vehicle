@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Component
-class BicycleService implements VehicleService<Bicycle, BicycleRequest> {
+public class BicycleService implements VehicleService<Bicycle, BicycleRequest> {
 
     private BicycleRecordRepository repository;
     private MapBicycleRecordToBicycle recordToBicycle = new MapBicycleRecordToBicycle();

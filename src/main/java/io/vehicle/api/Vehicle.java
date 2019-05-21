@@ -6,6 +6,9 @@ public abstract class Vehicle {
     private Long id;
     private String company;
 
+    Vehicle() {
+    }
+
     Vehicle(Long id, String company) {
         this.id = id;
         this.company = company;
@@ -32,8 +35,8 @@ public abstract class Vehicle {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Vehicle vehicle = (Vehicle) o;
-        return id.equals(vehicle.id) &&
-                company.equals(vehicle.company);
+        return id.equals(vehicle.id)
+                && company.equals(vehicle.company);
     }
 
     @Override

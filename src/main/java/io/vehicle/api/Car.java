@@ -6,11 +6,14 @@ public class Car extends Vehicle {
 
     private String model;
 
+    public Car() {
+    }
+
     public Car(Long id, String company, String model) {
         super(id, company);
         this.model = model;
     }
-    
+
     public String getModel() {
         return model;
     }

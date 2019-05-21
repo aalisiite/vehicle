@@ -1,6 +1,5 @@
 package io.vehicle;
 
-import io.vehicle.api.Vehicle;
 import io.vehicle.api.request.VehicleRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -32,11 +31,11 @@ public class VehicleController {
     }
 
     @GetMapping("/vehicles")
-    public ResponseEntity<List<Vehicle>> getVehicles(String types) {
+    public List getVehicles(@RequestParam(value = "types") String types) {
         VehicleService service = services.stream()
                 .filter(vehicleService -> vehicleService.vehicleType().equals(types))
                 .findFirst()
                 .orElseThrow();
-        return new ResponseEntity<>(service.getVehicles(), HttpStatus.OK);
+        return service.getVehicles();
     }
 }

@@ -44,8 +44,8 @@ public class VehicleRecord {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         VehicleRecord that = (VehicleRecord) o;
-        return id.equals(that.id) &&
-                company.equals(that.company);
+        return id.equals(that.id)
+                && company.equals(that.company);
     }
 
     @Override

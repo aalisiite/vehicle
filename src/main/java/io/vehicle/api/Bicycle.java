@@ -6,6 +6,9 @@ import java.util.Objects;
 public class Bicycle extends Vehicle {
     private String model;
 
+    public Bicycle() {
+    }
+
     public Bicycle(Long id, String company, String model) {
         super(id, company);
         this.model = model;
